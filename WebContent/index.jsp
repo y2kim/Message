@@ -17,17 +17,21 @@ $(document).ready(function() {
 	$("#Output").click(function(){
 		$(location).attr("href","output.do");
 	})
+	$("#other").click(function(){
+		$(location).attr("href","other.do");
+	})
 })
 </script>
 </head>
 <body>
 	<table border=1 align=center>
 		<tr>
-			<th colspan=2>Person Project
+			<th colspan=3>Person Project
 		</tr>
 		<tr>
 			<td><button id="Input">toInput</button>
 			<td><button id="Output">toOutput</button>
+			<td><button id="other">other</button>
 		</tr>
 	</table>
 </body>
