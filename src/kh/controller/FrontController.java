@@ -1,6 +1,8 @@
 package kh.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,19 @@ public class FrontController extends HttpServlet {
 		
 		boolean isRedirect = true;
 		String whereTo = null;
+		
+		if(command.equals("/input.do")) {
+			whereTo = "input.jsp";
+		}else if(command.equals("/output.do")) {
+			whereTo = "output.jsp";
+		}
+		
+		if(isRedirect) {
+			response.sendRedirect(whereTo);
+		}else {
+			RequestDispatcher rd = request.getRequestDispatcher(whereTo);
+			rd.forward(request, response);
+		}
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
