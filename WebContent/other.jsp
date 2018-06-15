@@ -26,7 +26,6 @@
 						console.log(res.id);
 						console.log(res.kakao_account.email);
 						console.log(res.properties['nickname']);
-
 					}
 				})
 			},
